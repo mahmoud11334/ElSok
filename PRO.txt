@@ -1,0 +1,12 @@
+{
+    nameAr:   '',
+    nameEn:   '',
+    cate:     '',
+    disAr:    '',
+    disEn:    '',
+    mainimg:  'Prodict/0/main.jpg',
+    img2:     'Prodict/0/2.jpg',
+    img3:     'Prodict/0/3.jpg',
+    price:    'متغير',
+    url:      ''
+  },

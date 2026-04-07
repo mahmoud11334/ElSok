@@ -49,6 +49,7 @@ var CATEGORIES = [
   { label: 'الكل',          labelEn: 'All',          value: 'all',       icon: 'fa-solid fa-border-all'     },
   { label: 'الأكثر بيعاً',  labelEn: 'Best Sellers', value: 'bestseller',icon: 'fa-solid fa-fire'           },
   { label: 'هواتف',         labelEn: 'Phones',       value: 'هواتف',     icon: 'fa-solid fa-mobile-screen'  },
+  { label: 'الجمال',     labelEn: 'Beauty',  value: 'الجمال', icon: 'fa-solid fa-spray-can-sparkles'             },
   { label: 'غيرها',     labelEn: 'Other',  value: 'غيرها', icon: 'fa-solid fa-box-open'             },
 ];
 
@@ -78,7 +79,18 @@ var PRODUCTS = [
     price:   'متغير',
     url:     'https://amzn.to/47Lcvs5'
   },
-  
+  {
+    nameAr:   'ماسك شعر من كلاري - 300 مل',
+    nameEn:   'Clary Hair Mask - 300ml',
+    cate:     'الجمال',
+    disAr:    'قناع شعر كلارت غني بالبروكابيل.كلاري قناع الشعر له تأثير ثلاثي فريد من نوعه حيث يتحكم في تساقط الشعر ويصلح الشعر التالف ويمنح الشعر مظهرًا لامعًا وناعمًا للغاية',
+    disEn:    'Clary hair mask is enriched with procapil. Clary hair mask has a unique triple action: it controls hair loss, repairs damaged hair, and gives hair a shiny and incredibly soft appearance.',
+    mainimg:  'Prodict/3/main.jpg',
+    img2:     '',
+    img3:     '',
+    price:    'متغير',
+    url:      'https://amzn.to/3QnWF0p'
+  },
 ];
 
 

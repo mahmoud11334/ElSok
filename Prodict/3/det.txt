@@ -1,10 +1,10 @@
-nameAR : ()
+nameAR : (ماسك شعر من كلاري - 300 مل)
 ---------------------
-desAR : ()
+desAR : (قناع شعر كلارت غني بالبروكابيل.كلاري قناع الشعر له تأثير ثلاثي فريد من نوعه حيث يتحكم في تساقط الشعر ويصلح الشعر التالف ويمنح الشعر مظهرًا لامعًا وناعمًا للغاية)
 ---------------------
-nameEN: ()
+nameEN: (Clary Hair Mask - 300ml)
 ----------------------
-desEN: ()
+desEN: (Clary hair mask is enriched with procapil. Clary hair mask has a unique triple action: it controls hair loss, repairs damaged hair, and gives hair a shiny and incredibly soft appearance.)
 ------------------------
 
-URL: ()
+URL: (https://amzn.to/3QnWF0p)
