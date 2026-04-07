@@ -35,6 +35,25 @@
     </div>
 
     <div class="nav-actions">
+
+<a href="https://amzn.to/47OZa1Y" target="_blank" rel="noopener noreferrer" class="nav-deals-btn" id="deals-btn" aria-label="عروض اليوم">
+  <span class="deals-confetti" aria-hidden="true">
+    <i class="fa-solid fa-gift"></i>
+  </span>
+  <span class="deals-stars" aria-hidden="true">
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+  </span>
+  <i class="fa-solid fa-tags" aria-hidden="true"></i>
+  <span id="deals-btn-text">عروض اليوم</span>
+</a>
+
+
+<button class="nav-bazar-btn" id="bazar-btn" aria-label="تسوق في البازار" onclick="openBazarModal()">
+  <i class="fa-solid fa-store" aria-hidden="true"></i>
+  <span id="bazar-btn-text">تسوق في البازار</span>
+</button>
       <button class="nav-lang-btn" id="lang-toggle-btn" aria-label="تغيير اللغة">
         <i class="fa-solid fa-globe" aria-hidden="true"></i>
         <span id="lang-btn-label">EN</span>
@@ -156,6 +175,25 @@
 <button class="scroll-to-top" id="scroll-to-top-btn" aria-label="العودة للأعلى">
   <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
 </button>
+
+
+<div class="bazar-backdrop" id="bazar-backdrop" onclick="closeBazarOutside(event)">
+  <div class="bazar-box" id="bazar-box">
+    <button class="bazar-close-btn" onclick="closeBazarModal()" aria-label="إغلاق">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="bazar-img-wrap">
+      <img src="img/bazar.png" alt="البازار" class="bazar-img"
+           onerror="this.style.display='none'">
+    </div>
+    <p class="bazar-tagline" id="bazar-tagline">عروض متتفوتش داخل البازار ادخل الحق اخر القطع</p>
+    <a href="https://amzn.to/47Kt1IT" target="_blank" rel="noopener noreferrer"
+       class="bazar-go-btn" id="bazar-go-btn">
+      <i class="fa-solid fa-arrow-left" id="bazar-arrow-icon" aria-hidden="true"></i>
+      <span id="bazar-go-text">اذهب الي البازار</span>
+    </a>
+  </div>
+</div>
 
 <script src="main.js"></script>
 </body>

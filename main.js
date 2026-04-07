@@ -184,6 +184,25 @@ function renderStaticText() {
   $('footer-credit-prefix').textContent = s.footer_credit;
   $('lang-btn-label').textContent       = s.lang_btn_label;
   $('section-title-text').textContent   = getCategoryLabel(state.activeCategory);
+
+  var dealsEl = $('deals-btn-text');
+  if (dealsEl) dealsEl.textContent = state.lang === 'ar' ? 'عروض اليوم' : 'Today\'s Deals';
+
+  var bazarBtnEl = $('bazar-btn-text');
+  if (bazarBtnEl) bazarBtnEl.textContent = state.lang === 'ar' ? 'تسوق في البازار' : 'Shop the Bazaar';
+
+
+  var bazarTagline = $('bazar-tagline');
+  if (bazarTagline) bazarTagline.textContent = state.lang === 'ar'
+    ? 'عروض متتفوتش داخل البازار ادخل الحق اخر القطع'
+    : 'Don\'t miss out — last pieces inside the Bazaar!';
+
+  var bazarGoText = $('bazar-go-text');
+  if (bazarGoText) bazarGoText.textContent = state.lang === 'ar' ? 'اذهب الي البازار' : 'Go to the Bazaar';
+
+
+  var bazarImg = document.querySelector('.bazar-img');
+  if (bazarImg) bazarImg.src = state.lang === 'ar' ? 'img/bazar.png' : 'img/bazar_en.png';
 }
 
 function renderCategories() {
@@ -470,6 +489,7 @@ function toggleLang() {
   renderStaticText();
   renderCategories();
   renderProducts();
+  updateBazarArrow();
 
   if (state.searchQuery) renderSuggestions(state.searchQuery);
 }
@@ -729,3 +749,43 @@ renderStaticText();
 renderCategories();
 renderProducts();
 state.canvasStop = initCanvas();
+
+
+function openBazarModal() {
+  var backdrop = document.getElementById('bazar-backdrop');
+  if (backdrop) {
+    backdrop.classList.add('is-open');
+    document.body.classList.add('modal-open');
+  }
+}
+
+function closeBazarModal() {
+  var backdrop = document.getElementById('bazar-backdrop');
+  if (backdrop) {
+    backdrop.classList.remove('is-open');
+    document.body.classList.remove('modal-open');
+  }
+}
+
+function closeBazarOutside(evt) {
+  if (evt.target === document.getElementById('bazar-backdrop')) {
+    closeBazarModal();
+  }
+}
+
+document.addEventListener('keydown', function(evt) {
+  if (evt.key === 'Escape') {
+    var bazar = document.getElementById('bazar-backdrop');
+    if (bazar && bazar.classList.contains('is-open')) {
+      closeBazarModal();
+    }
+  }
+});
+
+function updateBazarArrow() {
+  var icon = document.getElementById('bazar-arrow-icon');
+  if (!icon) return;
+  icon.className = document.documentElement.dir === 'rtl'
+    ? 'fa-solid fa-arrow-left'
+    : 'fa-solid fa-arrow-right';
+}

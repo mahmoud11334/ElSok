@@ -656,3 +656,252 @@ nav {
   .hero-stat-number { font-size: 1.35rem; }
   .modal-product-name { font-size: 1.2rem; }
 }
+
+.nav-bazar-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-accent);
+  background: var(--accent-dim);
+  color: var(--accent-bright);
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--t-fast) var(--ease),
+              box-shadow var(--t-fast) var(--ease),
+              transform var(--t-fast) var(--spring),
+              border-color var(--t-fast) var(--ease);
+}
+.nav-bazar-btn:hover {
+  background: var(--accent);
+  color: #0a0700;
+  border-color: var(--accent);
+  box-shadow: 0 4px 18px var(--accent-glow-hard);
+  transform: translateY(-2px);
+}
+.nav-bazar-btn i { font-size: 0.88rem; }
+
+.nav-deals-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(99, 202, 183, 0.40);
+  background: linear-gradient(135deg, rgba(30,180,140,0.18) 0%, rgba(30,120,220,0.15) 100%);
+  color: #3ecfaf;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  overflow: hidden;
+  transition: box-shadow var(--t-fast) var(--ease),
+              transform var(--t-fast) var(--spring),
+              border-color var(--t-fast) var(--ease);
+  animation: dealsPulse 2.4s var(--ease) infinite;
+}
+.nav-deals-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 22px rgba(62,207,175,0.38);
+  border-color: rgba(99,202,183,0.75);
+  animation-play-state: paused;
+}
+
+.nav-deals-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -80%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,255,255,0.18) 50%,
+    transparent 100%);
+  transform: skewX(-18deg);
+  animation: dealsShimmer 2.4s var(--ease) infinite;
+}
+
+.deals-confetti {
+  position: absolute;
+  top: -6px;
+  right: 10px;
+  font-size: 0.72rem;
+  color: #f6d860;
+  animation: dealsBounce 1.1s var(--spring) infinite alternate;
+  pointer-events: none;
+}
+[dir="ltr"] .deals-confetti { right: auto; left: 10px; }
+
+.deals-stars {
+  position: absolute;
+  bottom: -5px;
+  left: 8px;
+  display: flex;
+  gap: 3px;
+  font-size: 0.50rem;
+  pointer-events: none;
+}
+[dir="ltr"] .deals-stars { left: auto; right: 8px; }
+.deals-stars i:nth-child(1) { color: #f6d860; animation: starTwinkle 1.2s ease infinite; }
+.deals-stars i:nth-child(2) { color: #ff8fa3; animation: starTwinkle 1.6s ease 0.2s infinite; }
+.deals-stars i:nth-child(3) { color: #85d4ff; animation: starTwinkle 1.0s ease 0.4s infinite; }
+
+@keyframes dealsPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(62,207,175,0); }
+  50%       { box-shadow: 0 0 0 5px rgba(62,207,175,0.18); }
+}
+@keyframes dealsShimmer {
+  0%   { left: -80%; }
+  60%, 100% { left: 130%; }
+}
+@keyframes dealsBounce {
+  from { transform: translateY(0) rotate(-15deg); }
+  to   { transform: translateY(-5px) rotate(10deg); }
+}
+@keyframes starTwinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.3; transform: scale(0.6); }
+}
+
+[data-theme="light"] .nav-deals-btn {
+  background: linear-gradient(135deg, rgba(20,160,120,0.12) 0%, rgba(20,100,200,0.10) 100%);
+  color: #0e9e7e;
+  border-color: rgba(14,158,126,0.35);
+}
+[data-theme="light"] .nav-bazar-btn { color: var(--accent); }
+
+.bazar-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2100;
+  background: rgba(0,0,0,0.80);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--t-med) var(--ease);
+}
+.bazar-backdrop.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.bazar-box {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  transform: scale(0.88) translateY(30px);
+  transition: transform var(--t-med) var(--spring);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.65), 0 0 0 1px var(--border-accent);
+}
+.bazar-backdrop.is-open .bazar-box {
+  transform: scale(1) translateY(0);
+}
+
+.bazar-close-btn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 5;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.50);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--t-fast) var(--ease);
+}
+[dir="ltr"] .bazar-close-btn { left: auto; right: 12px; }
+.bazar-close-btn:hover { background: #c0392b; }
+
+.bazar-img-wrap {
+  width: 100%;
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 200px;
+}
+.bazar-img {
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.bazar-tagline {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  padding: 20px 24px 8px;
+  line-height: 1.5;
+}
+
+.bazar-go-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: calc(100% - 48px);
+  margin: 12px auto 24px;
+  padding: 14px 24px;
+  border-radius: var(--radius-md);
+  background: var(--accent);
+  border: none;
+  color: #0a0700;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--t-fast) var(--ease),
+              box-shadow var(--t-fast) var(--ease),
+              transform var(--t-fast) var(--spring);
+}
+.bazar-go-btn:hover {
+  background: var(--accent-bright);
+  box-shadow: 0 6px 28px var(--accent-glow-hard);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 440px) {
+  .nav-bazar-btn span,
+  .nav-deals-btn span:not(.deals-confetti):not(.deals-stars) {
+    display: none;
+  }
+  .nav-bazar-btn,
+  .nav-deals-btn {
+    width: 40px;
+    padding: 0;
+    justify-content: center;
+  }
+}

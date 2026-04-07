@@ -1,8 +1,10 @@
-nameAR : ()
+nameAR : (ميزان مطبخ رقمي عالي الدقة 10 كجم - ميزان إلكتروني أبيض - ميزان مطبخ محمول بشاشة ال سي دي من بورتال)
 ---------------------
-desAR : ()
+desAR : (قياس دقيق: يزن حتى 5 كجم بدقة بزيادة 1 جم.وظيفة الوزن الفارغ: استخدم وظيفة الوزن الفارغ لإزالة وزن الحاوية من القياس النهائي لطعامك..شاشة عرض LCD: يمكنك قراءة القياسات بسهولة على شاشة ال سي دي بإضاءة خلفية.)
 ---------------------
-nameEN: ()
+nameEN: (10kg High-Precision Digital Kitchen Scale - White Electronic Scale - Portable Kitchen Scale with LCD Display by Portal)
 ----------------------
-nameAR: ()
+desEN: (Accurate measurement: Weighs up to 5 kg with an accuracy of 1 g increments. Tare weight function: Use the tare weight function to remove the weight of the container from your final food measurement. LCD display: You can easily read measurements on the backlit LCD screen.)
 ------------------------
+
+URL: (https://amzn.to/47Lcvs5)
